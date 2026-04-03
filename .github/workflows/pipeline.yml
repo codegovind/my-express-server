@@ -1,0 +1,28 @@
+name: My First CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Get the code
+        uses: actions/checkout@v3
+
+      - name: Step 2 - Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Step 3 - Install dependencies
+        run: npm install
+
+      - name: Step 4 - Run tests
+        run: npm test
+
+      - name: Step 5 - Build success message
+        run: echo "Build successful! Ready to deploy."
