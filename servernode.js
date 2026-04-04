@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json()); // allows server to read JSON from requests
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Returns a single user as JSON
 app.get('/user', (req, res) => {
