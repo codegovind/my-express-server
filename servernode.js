@@ -15,6 +15,17 @@ app.get('/user', (req, res) => {
   res.json(user);
 });
 //add new commit
+app.get('/hi', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head><title>Bayako</title></head>
+      <body>
+        <h1>I Love You</h1>
+      </body>
+    </html>
+  `);
+});
 // Returns a list of users
 app.get('/users', (req, res) => {
   const users = [
